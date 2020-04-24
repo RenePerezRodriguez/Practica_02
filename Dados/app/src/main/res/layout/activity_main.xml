@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtNumeroAleatorio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -15,13 +15,13 @@
         android:layout_marginTop="16dp"
         android:text="@string/numeroAleatorio_String"
         android:textSize="130sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/txtCPU"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="@+id/txtCPU"
+        app:layout_constraintTop_toBottomOf="@+id/txtCPU" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtVictorias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnReiniciarPuntuacion"
         android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginTop="8dp"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtNumeroUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -54,16 +54,16 @@
         android:ems="10"
         android:inputType="number"
         android:text="@string/numeroUsuario_String"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/txtNombreJugador"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="@+id/txtNombreJugador"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreJugador" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtNombreJugador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="140dp"
         android:text="@string/Usuario_String"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,28 +72,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtCPU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="@string/CPU_String"
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintStart_toStartOf="@+id/txtNombreJugador"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumeroUsuario" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnJugar"
         android:layout_width="83dp"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:text="@string/buttonjugar_String"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="@+id/editText" />
+        app:layout_constraintBottom_toBottomOf="@+id/txtNumeroUsuario"
+        app:layout_constraintStart_toEndOf="@+id/txtNumeroUsuario"
+        app:layout_constraintTop_toTopOf="@+id/txtNumeroUsuario" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnSalir"
         android:layout_width="120dp"
         android:layout_height="32dp"
         android:layout_marginEnd="5dp"
