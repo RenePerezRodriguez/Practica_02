@@ -52,14 +52,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-<<<<<<< Updated upstream
-
            Toast men= Toast.makeText(this,"Debe ingresar un numero valido del 1 al 10",Toast.LENGTH_LONG);
 
            men.show();
-=======
-            Toast.makeText(getApplicationContext(),"Debe ingresar un numero valido del 1 al 10",Toast.LENGTH_LONG);
->>>>>>> Stashed changes
         }
     }
 
