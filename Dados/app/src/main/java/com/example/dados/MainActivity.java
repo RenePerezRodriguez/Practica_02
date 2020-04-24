@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText entradaDado;
     private Button lanzar;
     private TextView estado,numeroAleatorio;
-
+    int puntuacion=0;
 
     //private static final int num = 10;
     //int ramdon = (int)((Math.random()* num)+1);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void DevolverNumero(View view)
     {
-        int puntuacion=0;
+
         int dado = Integer.parseInt(entradaDado.getText().toString());
 
         if (dado >= 1 && dado <= 10){
@@ -52,10 +52,9 @@ public class MainActivity extends AppCompatActivity {
                     "administracion", null, 1);
             SQLiteDatabase bd = admin.getWritableDatabase();
             ContentValues valor = new ContentValues();
-
             valor.put("punto" , puntuacion);
 
-            numeroAleatorio.setText(String.valueOf(generarNumeroAleatorio()));
+
 
             if (dado == generarNumeroAleatorio())
             {
@@ -87,10 +86,30 @@ public class MainActivity extends AppCompatActivity {
         int intAletorio = (aleatorio.nextInt(10) + 1);
 
 
+
         // Refrescar datos aleatorios
         aleatorio.setSeed(System.currentTimeMillis());
 
+        numeroAleatorio.setText(String.valueOf(intAletorio));
+
         return  intAletorio;
+
+    }
+
+    public void reiniciarPunto(View view){
+
+        puntuacion = 0;
+
+        SqlHelper admin = new SqlHelper(this,
+                "administracion", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        ContentValues valor = new ContentValues();
+        valor.put("punto" , puntuacion);
+
+        bd.update("tablaAumento", valor,"punto",null);
+
+        bd.close();
+
 
     }
 }
