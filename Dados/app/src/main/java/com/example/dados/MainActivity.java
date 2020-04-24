@@ -16,22 +16,15 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private EditText entradaDado;
-    private Button lanzar;
     private TextView estado,numeroAleatorio;
     int puntuacion=0;
 
-    //private static final int num = 10;
-    //int ramdon = (int)((Math.random()* num)+1);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         entradaDado = findViewById(R.id.txtNumeroUsuario);
-
-        lanzar = findViewById(R.id.btnJugar);
-
 
         estado = findViewById(R.id.txtVictorias);
         numeroAleatorio = findViewById(R.id.txtNumeroAleatorio);
@@ -42,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void DevolverNumero(View view)
     {
-
         int dado = Integer.parseInt(entradaDado.getText().toString());
 
         if (dado >= 1 && dado <= 10){
@@ -88,12 +80,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Refrescar datos aleatorios
-        aleatorio.setSeed(System.currentTimeMillis());
+        //aleatorio.setSeed(System.currentTimeMillis());
 
         numeroAleatorio.setText(String.valueOf(intAletorio));
 
         return  intAletorio;
-
     }
 
     public void reiniciarPunto(View view){
@@ -109,7 +100,5 @@ public class MainActivity extends AppCompatActivity {
         bd.update("tablaAumento", valor,"punto",null);
 
         bd.close();
-
-
     }
 }
