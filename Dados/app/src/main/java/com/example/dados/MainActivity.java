@@ -76,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
     public void reiniciarPunto(View view){
 
         puntuacion = 0;
-<<<<<<< HEAD
-=======
         //String punto = Integer.toString(puntuacion);
         SqlHelper admin = new SqlHelper(this,
                 "administracion", null, 1);
@@ -85,8 +83,6 @@ public class MainActivity extends AppCompatActivity {
         ContentValues valor = new ContentValues();
         valor.put("punto", (puntuacion));
         bd.update("tablaAumento" , valor,"punto =" + puntuacion ,null);
->>>>>>> master
-        estado.setText(String.format("Puntuacion %d", puntuacion));
     }
     public void cerrar(View view)
     {
