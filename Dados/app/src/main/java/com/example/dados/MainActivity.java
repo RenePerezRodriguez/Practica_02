@@ -75,16 +75,7 @@ public class MainActivity extends AppCompatActivity {
     public void reiniciarPunto(View view){
 
         puntuacion = 0;
-
-        SqlHelper admin = new SqlHelper(this,
-                "administracion", null, 1);
-        SQLiteDatabase bd = admin.getWritableDatabase();
-        ContentValues valor = new ContentValues();
-        valor.put("punto" , puntuacion);
-
-        bd.update("tablaAumento", valor,"punto ="+ puntuacion,null);
-
-        bd.close();
+        estado.setText(String.format("Puntuacion %d", puntuacion));
     }
     public void cerrar(View view)
     {
