@@ -28,19 +28,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        entradaDado = findViewById();
+        entradaDado = findViewById(R.id.txtNumeroUsuario);
 
-        lanzar = findViewById();
+        lanzar = findViewById(R.id.btnJugar);
 
 
-        estado = findViewById();
-        numeroAleatorio = findViewById();
+        estado = findViewById(R.id.txtVictorias);
+        numeroAleatorio = findViewById(R.id.txtNumeroAleatorio);
 
 
     }
 
 
-    public int devolverNumero(View view)
+    public void DevolverNumero(View view)
     {
         int puntuacion=0;
         int dado = Integer.parseInt(entradaDado.getText().toString());
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
             valor.put("punto" , puntuacion);
 
-
+            numeroAleatorio.setText(String.valueOf(generarNumeroAleatorio()));
 
             if (dado == generarNumeroAleatorio())
             {
@@ -75,11 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(),"Debe ingresar un numero valido del 1 al 10",Toast.LENGTH_LONG);
         }
-
-
-
-
-        return  puntuacion;
     }
 
 
