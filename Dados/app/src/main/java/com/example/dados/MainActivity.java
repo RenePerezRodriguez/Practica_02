@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 ContentValues valor = new ContentValues();
                 if (dado == generarNumeroAleatorio()) {
                     puntuacion++;
+                    //String punto = Integer.toString(puntuacion);
                     valor.put("punto", (puntuacion));
                     bd.insert("tablaAumento", null, valor);
                     entradaDado.setText("");
@@ -75,6 +76,13 @@ public class MainActivity extends AppCompatActivity {
     public void reiniciarPunto(View view){
 
         puntuacion = 0;
+        //String punto = Integer.toString(puntuacion);
+        SqlHelper admin = new SqlHelper(this,
+                "administracion", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        ContentValues valor = new ContentValues();
+        valor.put("punto", (puntuacion));
+        bd.update("tablaAumento" , valor,"punto =" + puntuacion ,null);
         estado.setText(String.format("Puntuacion %d", puntuacion));
     }
     public void cerrar(View view)
