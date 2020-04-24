@@ -6,7 +6,9 @@
 
     <color name="colorFondo">#1b99a7</color>
 
-    <color name="colorFondoNumero">#14130a</color>
+    <color name="colorFondoPlay">#fbc90a</color>
+    <color name="colorLetraPlay">#fffef2</color>
+
     <color name="colorNumero">#14130a</color>
 
     <color name="colorFondoBotones">#98c1c2</color>

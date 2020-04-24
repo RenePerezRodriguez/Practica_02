@@ -36,6 +36,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/victorias_string"
+        android:textColor="@color/colorNumero"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -92,12 +93,15 @@
 
     <Button
         android:id="@+id/btnJugar"
-        android:layout_width="83dp"
-        android:layout_height="46dp"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:background="@drawable/borde_redondo"
         android:onClick="DevolverNumero"
         android:text="@string/buttonjugar_String"
+        android:textColor="@color/colorLetraPlay"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/txtNumeroUsuario"
         app:layout_constraintStart_toEndOf="@+id/txtNumeroUsuario"
         app:layout_constraintTop_toTopOf="@+id/txtNumeroUsuario" />
