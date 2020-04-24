@@ -3,6 +3,7 @@ package com.example.dados;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -23,31 +24,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         entradaDado = findViewById(R.id.txtNumeroUsuario);
-
         estado = findViewById(R.id.txtVictorias);
         numeroAleatorio = findViewById(R.id.txtNumeroAleatorio);
-
-
     }
-
 
     public void DevolverNumero(View view)
     {
         int dado = Integer.parseInt(entradaDado.getText().toString());
-
         if (dado >= 1 && dado <= 10){
-
             //llama a la clase
             SqlHelper admin = new SqlHelper(this,
                     "administracion", null, 1);
             SQLiteDatabase bd = admin.getWritableDatabase();
             ContentValues valor = new ContentValues();
             valor.put("punto" , puntuacion);
-
-
-
             if (dado == generarNumeroAleatorio())
             {
                 puntuacion++;
@@ -57,36 +48,25 @@ public class MainActivity extends AppCompatActivity {
                 estado.setText(String.format("Puntuacion %d", puntuacion));
             }
             else{
-
                 estado.setText(String.format("Puntuacion %d", puntuacion));
             }
-
         }
-
         else {
+<<<<<<< Updated upstream
 
            Toast men= Toast.makeText(this,"Debe ingresar un numero valido del 1 al 10",Toast.LENGTH_LONG);
 
            men.show();
+=======
+            Toast.makeText(getApplicationContext(),"Debe ingresar un numero valido del 1 al 10",Toast.LENGTH_LONG);
+>>>>>>> Stashed changes
         }
     }
 
-
-
     public int generarNumeroAleatorio(){
-
-
         Random aleatorio = new Random(System.currentTimeMillis());
-        // Producir nuevo int aleatorio entre 0 y 9
         int intAletorio = (aleatorio.nextInt(10) + 1);
-
-
-
-        // Refrescar datos aleatorios
-        //aleatorio.setSeed(System.currentTimeMillis());
-
         numeroAleatorio.setText(String.valueOf(intAletorio));
-
         return  intAletorio;
     }
 
@@ -103,5 +83,9 @@ public class MainActivity extends AppCompatActivity {
         bd.update("tablaAumento", valor,"punto ="+ puntuacion,null);
 
         bd.close();
+    }
+    public void cerrar(View view)
+    {
+        finish();
     }
 }

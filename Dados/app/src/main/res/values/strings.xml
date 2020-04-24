@@ -5,10 +5,10 @@
 
     <string name="Usuario_String">Jugador 01</string>
     <string name="numeroUsuario_String">10</string>
-    <string name="buttonjugar_String">Jugar</string>
+    <string name="buttonjugar_String">Play</string>
 
     <string name="CPU_String">CPU</string>
     <string name="numeroAleatorio_String">1   -   10</string>
 
-    <string name="buttonSalir_String">Salir del juego</string>
+    <string name="buttonSalir_String">Salir</string>
 </resources>
