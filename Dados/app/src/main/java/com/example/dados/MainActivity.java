@@ -32,29 +32,36 @@ public class MainActivity extends AppCompatActivity {
     public void DevolverNumero(View view)
     {
         int dado = Integer.parseInt(entradaDado.getText().toString());
-        if (dado >= 1 && dado <= 10){
-            //llama a la clase
-            SqlHelper admin = new SqlHelper(this,
-                    "administracion", null, 1);
-            SQLiteDatabase bd = admin.getWritableDatabase();
-            ContentValues valor = new ContentValues();
-            valor.put("punto" , puntuacion);
-            if (dado == generarNumeroAleatorio())
-            {
-                puntuacion++;
-                bd.insert("tablaAumento",null , valor);
-                entradaDado.setText("");
-                bd.close();
-                estado.setText(String.format("Puntuacion %d", puntuacion));
-            }
-            else{
-                estado.setText(String.format("Puntuacion %d", puntuacion));
+        entradaDado.setText("");
+
+        if (entradaDado.length() !=0) {
+            if (dado >= 1 && dado <= 10) {
+                //llama a la clase
+                SqlHelper admin = new SqlHelper(this,
+                        "administracion", null, 1);
+                SQLiteDatabase bd = admin.getWritableDatabase();
+                ContentValues valor = new ContentValues();
+                valor.put("punto", puntuacion);
+                if (dado == generarNumeroAleatorio()) {
+                    puntuacion++;
+                    bd.insert("tablaAumento", null, valor);
+                    entradaDado.setText("");
+                    bd.close();
+                    estado.setText(String.format("Puntuacion %d", puntuacion));
+                } else {
+                    estado.setText(String.format("Puntuacion %d", puntuacion));
+                }
+            } else {
+                Toast men = Toast.makeText(this, "Debe ingresar un numero valido del 1 al 10", Toast.LENGTH_LONG);
+
+                men.show();
             }
         }
-        else {
-           Toast men= Toast.makeText(this,"Debe ingresar un numero valido del 1 al 10",Toast.LENGTH_LONG);
+        else
+        {
+            Toast menn = Toast.makeText(this, "Debe ingresar un numero valido del 1 al 10", Toast.LENGTH_LONG);
 
-           men.show();
+            menn.show();
         }
     }
 
