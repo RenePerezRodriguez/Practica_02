@@ -11,8 +11,8 @@
         android:id="@+id/txtNumeroAleatorio"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="16dp"
         android:background="@mipmap/ruleta"
         android:gravity="center"
@@ -30,14 +30,17 @@
 
     <TextView
         android:id="@+id/txtVictorias"
-        android:layout_width="wrap_content"
+        android:layout_width="85dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/borde_redondo_victorias"
+        android:gravity="center"
         android:text="@string/victorias_string"
-        android:textColor="@color/colorNumero"
+        android:textColor="@color/colorLetraNombreugador"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,9 +48,9 @@
         android:id="@+id/btnReiniciarPuntuacion"
         android:layout_width="110dp"
         android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:onClick="reiniciarPunto"
         android:text="@string/buttonReiniciar_String"
         android:textSize="8sp"
@@ -56,40 +59,45 @@
 
     <EditText
         android:id="@+id/txtNumeroUsuario"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/borde_redondo_text"
         android:ems="10"
+        android:gravity="center"
         android:inputType="number"
         android:text="@string/numeroUsuario_String"
-        app:layout_constraintEnd_toEndOf="@+id/txtNombreJugador"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtNombreJugador"
+        android:textColor="@color/colorLetraNumeroJugador"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombreJugador" />
 
     <TextView
         android:id="@+id/txtNombreJugador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:text="@string/Usuario_String"
-        android:textSize="25sp"
+        android:textColor="@color/colorLetraNombreugador"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/txtNumeroAleatorio" />
 
     <TextView
         android:id="@+id/txtCPU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="100dp"
         android:text="@string/CPU_String"
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/txtNombreJugador"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumeroUsuario" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnJugar"

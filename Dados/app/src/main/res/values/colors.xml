@@ -8,6 +8,8 @@
 
     <color name="colorFondoPlay">#fbc90a</color>
     <color name="colorLetraPlay">#fffef2</color>
+    <color name="colorLetraNumeroJugador">#e3e1e2</color>
+    <color name="colorLetraNombreugador">#fffef2</color>
 
     <color name="colorNumero">#14130a</color>
 
