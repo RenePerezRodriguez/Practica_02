@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class SqlHelper extends SQLiteOpenHelper {
 
-    private static final String tablaAumento = "CREATE TABLE  puntos(punto int)";
+    private static final String tablaAumento = "CREATE TABLE  puntos(punto TEXT)";
 
     public SqlHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

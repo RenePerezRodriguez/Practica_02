@@ -34,16 +34,16 @@ public class MainActivity extends AppCompatActivity {
         int dado = Integer.parseInt(entradaDado.getText().toString());
         entradaDado.setText("");
 
-        if (entradaDado.length() !=0) {
+        //if (entradaDado.length() != 0) {
             if (dado >= 1 && dado <= 10) {
                 //llama a la clase
                 SqlHelper admin = new SqlHelper(this,
                         "administracion", null, 1);
                 SQLiteDatabase bd = admin.getWritableDatabase();
                 ContentValues valor = new ContentValues();
-                valor.put("punto", puntuacion);
                 if (dado == generarNumeroAleatorio()) {
                     puntuacion++;
+                    valor.put("punto", (puntuacion));
                     bd.insert("tablaAumento", null, valor);
                     entradaDado.setText("");
                     bd.close();
@@ -56,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
                 men.show();
             }
-        }
-        else
-        {
-            Toast menn = Toast.makeText(this, "Debe ingresar un numero valido del 1 al 10", Toast.LENGTH_LONG);
+        //}
+//        else
+//        {
+//            Toast menn = Toast.makeText(this, "Debe ingresar un numero valido del 1 al 10", Toast.LENGTH_LONG);
 
-            menn.show();
-        }
+//            menn.show();
+//       / }
     }
 
     public int generarNumeroAleatorio(){
