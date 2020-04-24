@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 puntuacion++;
                 bd.insert("tablaAumento",null , valor);
+                entradaDado.setText("");
                 bd.close();
                 estado.setText(String.format("Puntuacion %d", puntuacion));
             }
@@ -64,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
 
         else {
 
-            Toast.makeText(getApplicationContext(),"Debe ingresar un numero valido del 1 al 10",Toast.LENGTH_LONG);
+           Toast men= Toast.makeText(this,"Debe ingresar un numero valido del 1 al 10",Toast.LENGTH_LONG);
+
+           men.show();
         }
     }
 
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         ContentValues valor = new ContentValues();
         valor.put("punto" , puntuacion);
 
-        bd.update("tablaAumento", valor,"punto",null);
+        bd.update("tablaAumento", valor,"punto ="+ puntuacion,null);
 
         bd.close();
     }
